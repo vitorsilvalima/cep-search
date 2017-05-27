@@ -12,17 +12,20 @@ export class AppComponent implements OnInit{
 
   public formAddress: FormGroup;
   constructor(
-	private correiosService:CorreiosService,
 	private fb: FormBuilder
   ){ }
 
   ngOnInit(){
 	  this.formAddress = this.fb.group({
-		  cep: ['', [Validators.required]]
+		  cep: ['', [Validators.required]],
+      endereco : this.fb.group({
+          rua:['', [Validators.required]],
+          numero:['', [Validators.required]],
+          cep:['', [Validators.required]],
+          cidade:['', [Validators.required]],
+          complemento:['', [Validators.required]],
+          uf:['', [Validators.required]],
+      })
 	  });
-  }
-
-  findCep(cep:string){
-	  this.correiosService.getAddress(cep).then(data => console.log(data));
   }
 }

@@ -1,10 +1,8 @@
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
         <form [formGroup]="formAddress">
             <div class="row">
-                <app-cep [fmGroup]="formAddress" (findCep)="findCep($event)"></app-cep>
+                <app-address [frmGrp]="formAddress.get('endereco')"></app-address>
             </div>
         </form>
-    </div>
 </div>
 

@@ -7,10 +7,12 @@ import { HttpModule } from '@angular/http';
 import { UtilModule } from './util/util.module';
 
 import { AppComponent } from './app.component';
+import { AddressComponent } from './components/address/address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,
